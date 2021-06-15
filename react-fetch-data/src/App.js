@@ -54,6 +54,7 @@ function App() {
     isError: fetchingPersonIsError,
     isLoading: fetchingPersonIsLoading
   } = useAsync([])
+  const [number, setNumber] = useState(0)
 
 
   useEffect(()=>{
@@ -87,6 +88,10 @@ function App() {
           return <div key={person.id}>{person.name}</div>
         })
       }
+      当前 number : {number}
+      <button onClick={()=>{
+        setNumber(number + 1)
+      }}> + 1</button>
 
 
 
